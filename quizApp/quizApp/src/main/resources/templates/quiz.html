@@ -36,15 +36,14 @@
                 <input type="radio" th:name="|questions[${i.index}].choose|" th:value="4"/>
                 <p th:text="${ques.optionD}"></p>
             </div>
-
-
+            <!--hidden inputs below are user to store the additional data related to ques data-->
+            <!-- to include data in a form submission without displaying it to the user-->
             <input type="hidden" th:name="|questions[${i.index}].Id|" th:value="${ques.Id}"/>
             <input type="hidden" th:name="|questions[${i.index}].title|" th:value="${ques.title}"/>
             <input type="hidden" th:name="|questions[${i.index}].ans|" th:value="${ques.ans}"/>
         </div>
         <button type="submit" class="btn btn-success d-block mx-auto mt-4">Submit</button>
     </form>
-
 
 </div>
 
