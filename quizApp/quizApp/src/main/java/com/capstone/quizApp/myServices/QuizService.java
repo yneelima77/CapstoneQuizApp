@@ -47,6 +47,7 @@ public class QuizService {
     public int getResult(QuizQuestions quizQuestions) throws Exception {
         int correct = 0;
 
+        /*Getting null in ques*/
         try {
             for (Questions ques : quizQuestions.getQuestions()) {
                 if (ques.getAns() == ques.getChoose()) {

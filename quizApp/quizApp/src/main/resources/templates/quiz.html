@@ -18,24 +18,29 @@
             <p class="title" th:text="${(i.index + 1)+'. '+ ques.title}"></p>
 
             <div class="option">
-                <input type="radio" th:id="${ques.id}"  th:name="|questions[${i.index}].choose|" th:value="1"/>
+                <input type="radio" th:name="|questions[${i.index}].choose|" th:value="1"/>
                 <p th:text="${ques.optionA}"></p>
             </div>
 
             <div class="option">
-                <input type="radio" th:id="${ques.id}"  th:name="|questions[${i.index}].choose|" th:value="2"/>
+                <input type="radio" th:name="|questions[${i.index}].choose|" th:value="2"/>
                 <p th:text="${ques.optionB}"></p>
             </div>
 
             <div class="option">
-                <input type="radio" th:id="${ques.id}" th:name="|questions[${i.index}].choose|" th:value="3"/>
+                <input type="radio" th:name="|questions[${i.index}].choose|" th:value="3"/>
                 <p th:text="${ques.optionC}"></p>
             </div>
 
             <div class="option">
-                <input type="radio" th:id="${ques.id}" th:name="|questions[${i.index].choose|" th:value="4"/>
+                <input type="radio" th:name="|questions[${i.index}].choose|" th:value="4"/>
                 <p th:text="${ques.optionD}"></p>
             </div>
+
+
+            <input type="hidden" th:name="|questions[${i.index}].Id|" th:value="${ques.Id}"/>
+            <input type="hidden" th:name="|questions[${i.index}].title|" th:value="${ques.title}"/>
+            <input type="hidden" th:name="|questions[${i.index}].ans|" th:value="${ques.ans}"/>
         </div>
         <button type="submit" class="btn btn-success d-block mx-auto mt-4">Submit</button>
     </form>
