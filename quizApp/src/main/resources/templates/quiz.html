@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/quiz.css}">
+    <title>Quiz Page</title>
+</head>
+<body>
+<div th:insert="navbar.html :: navbar"></div>
+<div class="container py-5 px-4">
+    <h3 class="bg-success text-light" style="text-align: center">Java Fullstack Quiz</h3>
+    <form action="/submit" method="POST" th:object=${quizQuestions}>
+        <div class="ques-box" th:each="ques, i: ${quizQuestions.questions}">
+            <p class="title" th:text="${(i.index + 1)+'. '+ ques.title}"></p>
+
+            <div class="option">
+                <input type="radio" th:id="${ques.id}"  th:name="|questions[${i.index}].choose|" th:value="1"/>
+                <p th:text="${ques.optionA}"></p>
+            </div>
+
+            <div class="option">
+                <input type="radio" th:id="${ques.id}"  th:name="|questions[${i.index}].choose|" th:value="2"/>
+                <p th:text="${ques.optionB}"></p>
+            </div>
+
+            <div class="option">
+                <input type="radio" th:id="${ques.id}" th:name="|questions[${i.index}].choose|" th:value="3"/>
+                <p th:text="${ques.optionC}"></p>
+            </div>
+
+            <div class="option">
+                <input type="radio" th:id="${ques.id}" th:name="|questions[${i.index].choose|" th:value="4"/>
+                <p th:text="${ques.optionD}"></p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success d-block mx-auto mt-4">Submit</button>
+    </form>
+
+
+</div>
+
+<!-- Importing Footer -->
+<div th:insert="footer.html :: footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
