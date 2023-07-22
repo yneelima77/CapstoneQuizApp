@@ -1,4 +1,4 @@
-                                                           #Quiz Master
+# Quiz Master
                                                            
 The Quiz Master is a web application developed using Spring Boot, incorporating security features, and utilizing Thymeleaf for templating. This readme file provides an overview of the Quiz Master, its features, and instructions on how to set up and run the application.
 
