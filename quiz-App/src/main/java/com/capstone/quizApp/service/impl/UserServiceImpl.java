@@ -1,8 +1,8 @@
 package com.capstone.quizApp.service.impl;
 
 import com.capstone.quizApp.dto.UserDto;
-import com.capstone.quizApp.model.Role;
-import com.capstone.quizApp.model.User;
+import com.capstone.quizApp.entity.Role;
+import com.capstone.quizApp.entity.User;
 import com.capstone.quizApp.repository.RoleRepository;
 import com.capstone.quizApp.repository.UserRepository;
 import com.capstone.quizApp.service.UserService;
@@ -37,20 +37,12 @@ public class UserServiceImpl implements UserService {
         //encrypt the password once we integrate spring security
         //user.setPassword(userDto.getPassword());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        Role role = roleRepository.findByName("ADMIN");
+        Role role = roleRepository.findByName("ROLE_ADMIN");
         if(role == null){
             role = checkRoleExist();
         }
         user.setRoles(Arrays.asList(role));
         userRepository.save(user);
-    }
-
-    private boolean authenticate(String email, String password) {
-        User user = userRepository.findByEmail(email);
-        if(user == null){
-            return false;
-        }
-        return user.getPassword().equals(password);
     }
 
     @Override

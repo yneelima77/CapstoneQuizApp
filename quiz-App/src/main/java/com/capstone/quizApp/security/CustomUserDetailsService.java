@@ -1,7 +1,7 @@
 package com.capstone.quizApp.security;
 
-import com.capstone.quizApp.model.Role;
-import com.capstone.quizApp.model.User;
+import com.capstone.quizApp.entity.Role;
+import com.capstone.quizApp.entity.User;
 import com.capstone.quizApp.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -36,9 +36,10 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     private Collection < ? extends GrantedAuthority> mapRolesToAuthorities(Collection <Role> roles) {
-        return roles.stream()
+        Collection < ? extends GrantedAuthority> mapRoles = roles.stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
+        return mapRoles;
     }
 }
 

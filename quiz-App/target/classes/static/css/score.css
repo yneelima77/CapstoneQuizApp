@@ -11,10 +11,11 @@ body {
 
 .main-container {
 	min-height: calc(100vh - 136px);
+	align: center;
 }
 
 table {
-	width: 100%;
+	width: 50%;
 	text-align: center;
 }
 

@@ -16,8 +16,26 @@
     </style>
 </head>
 <body>
-<!-- Importing NavBar -->
-<div th:insert="navbar.html :: navbar"></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">Quiz Master</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link active" href="/score">Leader Board</a>
+            </div>
+            .
+            <div class="navbar-nav ms-auto">
+                <a href="/register" class="nav-item nav-link active">Register</a>
+                <a href="/login" class="nav-item nav-link active">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <!--Main container-->
 <div class="container p-5 my-4 rounded-3">
     <h3>Let's Test Knowledge in Java FullStack Development</h3>
@@ -32,24 +50,24 @@
         use and works well on mobile devices, so you can study on the go.</p>
 
     <form action="/quiz" method="POST">
-        <h5 class="text-center">Start Your Quiz Here</h5>
+        <h5 class="text-center">Get Started Here</h5>
         <!--<p style="text-align: center;">Must Enter Your Name</p>-->
         <div style="display: flex; justify-content: center;">
-            <input type="text" name="username" placeholder="Username" pattern="[A-Za-z]+"
+            <input type="text" name="username" placeholder="Username"
                    title="Username Must contain letters only" required/>
         </div>
         <div style="display: flex; justify-content: center; margin-top:10px;">
             <button type="submit" class="btn btn-dark">Start Quiz</button>
         </div>
     </form>
-
+    <br/><br/>
     <div class="p-5 my-5 bg-light rounded-3">
-        <h1>Learn to Create Websites</h1>
+        <h3>Learn to Create Websites</h3>
         <p class="lead">In today's world internet is the most popular way of connecting with the people.
             you will learn the essential Application development technologies along with real life practice examples, so
             that
             you can create your own website to connect with the people around the world.</p>
-        <p><a href="https://www.Udemy.com" target="_blank" class="btn btn-dark btn-lg">Get started
+        <p><a href="https://www.Udemy.com" target="_blank" class="btn btn-dark btn-md">Get started
             today</a></p>
     </div>
     <div class="row">

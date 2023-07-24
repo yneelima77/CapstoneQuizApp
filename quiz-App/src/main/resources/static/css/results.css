@@ -22,14 +22,6 @@ body {
 	margin-top: 100px;
 }
 
-img {
-	width: 100%;
-	max-width: 350px;
-	position: relative;
-	display: block;
-	margin: -180px auto 50px auto;
-}
-
 .card button {
 	width: 45%;
 }

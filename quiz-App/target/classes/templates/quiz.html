@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/quiz.css}">
-    <!--<style>
+    <style>
         body{
         background-image: url('/images/background.jpg');
         }
 
-    </style>-->
+    </style>
     <title>Quiz Page</title>
 </head>
 <body>
@@ -25,10 +24,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link active" href="/score">Score Board</a>
+                <a class="nav-link active" href="/score">Leader Board</a>
             </div>
 
-            .
             <div class="navbar-nav ms-auto">
                 <a href="/login" class="nav-item nav-link active">Logout</a>
             </div>
@@ -36,7 +34,7 @@
     </div>
 </nav>
 <div class="container py-5 px-4">
-    <h3 class="bg-dark text-light" style="text-align: center">Java Fullstack Quiz</h3>
+    <h3 style="text-align: center; text-color: black;">Java Fullstack Quiz</h3>
     <form action="/submit" method="POST" th:object=${quizQuestions}>
         <div class="ques-box" th:each="ques, i: ${quizQuestions.questions}">
             <p class="title" th:text="${(i.index + 1)+'. '+ ques.title}"></p>
@@ -100,8 +98,6 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
 </script>
 </body>
 </html>

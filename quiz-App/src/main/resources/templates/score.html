@@ -15,13 +15,30 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">Quiz Master</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link active" href="/score">Leader Board</a>
+            </div>
 
-<!-- Importing NavBar -->
-<div th:insert="navbar.html :: navbar"></div>
+            .
+            <div class="navbar-nav ms-auto">
+                <a href="/login" class="nav-item nav-link active">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="main-container container py-5 px-4">
-    <h3 class="bg-dark text-center mb-5 p-2" style="color: white;">Top Scores</h3>
+    <h3 class="text-center mb-5 p-2" style="color: black;">Top Scores</h3>
 
-    <table class="bg-">
+    <table>
         <tr>
             <th>Name</th>
             <th>Score</th>
