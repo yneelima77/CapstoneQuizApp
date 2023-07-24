@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+
+/*.container {
+	*//*min-height: calc(100vh - 136px);*//*
+	display: ;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "text-box";
+	row-gap: 50px;
+	column-gap: 50px;
+}*/
+
+/*
+.form {
+	*//*
+width: 50%;
+	height:30%;
+	color:
+}
+*/
+
+form p{
+    color: black;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  font-size: 25px;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  text-align:right;
+}
+
+
+#myBtn:hover {
+  background-color: black;
+}
+
+footer {
+	height: 80px;
+	text-align: center;
+	line-height: 50px;
+}
+
