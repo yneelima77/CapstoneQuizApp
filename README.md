@@ -56,6 +56,8 @@ Once the Quiz App is running in your web browser, follow these steps to use the 
 
 5. **Retake Quiz (Optional)**: If you wish to retake the quiz or try another category, you can do so by navigating back to the quiz selection page.
 
+6. **Logout**: Aftercompleted with quiz and learning user can logout from quiz Master.
+
 ### Technologies Used
 The Quiz Master is built using the following technologies:
 
