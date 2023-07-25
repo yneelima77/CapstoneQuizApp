@@ -35,6 +35,16 @@ public class Questions {
         this.choose = choose;
     }
 
+    public Questions(long id, String title, String optionA, String optionB, String optionC, String optionD, int choose ) {
+        this.Id = id;
+        this.title = title;
+        this.optionA = optionA;
+        this.optionB = optionB;
+        this.optionC = optionC;
+        this.optionD = optionD;
+        this.choose = choose;
+    }
+
     public Long getId() {
         return Id;
     }

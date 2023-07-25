@@ -23,4 +23,14 @@ public class UserDto
     private String email;
     @NotEmpty(message = "Password should not be empty")
     private String password;
+
+    public UserDto(long id, String firstName, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.email = email;
+    }
+
+    public UserDto(String email) {
+        this.email = email;
+    }
 }

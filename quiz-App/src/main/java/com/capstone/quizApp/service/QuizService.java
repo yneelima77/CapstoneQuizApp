@@ -30,13 +30,17 @@ public class QuizService {
     @Autowired
     ResultRepo resultRepo;
 
+    //gets the random 10 questions from questions and add them to quizQuestions object to display
     public QuizQuestions getQuestions() {
-        List<Questions> allQuesList = questionsRepo.findAll();
+        //to create a copy of all the questions list obtained from findAll() method as arraylist so that list can be modifiable by that
+        //we can ensure that each questions is unique in quiz
+        //Here allQuesList(modifiable list) is the copy of quiz questions that we got through findall()(un modifiable list)
+        List<Questions> allQuesList = new ArrayList<>(questionsRepo.findAll());
         List<Questions> quesList = new ArrayList<Questions>();
 
         Random random = new Random();
 
-        for (int i = 0; i < allQuesList.size(); i++) {
+        for (int i = 0; i < 10; i++) {
             int rand = random.nextInt(allQuesList.size());
             quesList.add(allQuesList.get(rand));
             allQuesList.remove(rand);
@@ -47,6 +51,7 @@ public class QuizService {
         return quizQuestions;
     }
 
+    //calculates the score
     public int getResult(QuizQuestions quizQuestions){
         int correct = 0;
 
@@ -64,6 +69,7 @@ public class QuizService {
         return correct;
     }
 
+    //saves the quiz result to resultRepo to persist in result entity
     public void saveResult(Result result) {
         Result saveScore = new Result();
         saveScore.setUsername(result.getUsername());

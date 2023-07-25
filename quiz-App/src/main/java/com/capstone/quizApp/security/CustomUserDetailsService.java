@@ -2,7 +2,7 @@ package com.capstone.quizApp.security;
 
 import com.capstone.quizApp.entity.Role;
 import com.capstone.quizApp.entity.User;
-import com.capstone.quizApp.repository.UserRepository;
+import com.capstone.quizApp.repository.UserRepo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserRepository userRepository;
+    private UserRepo userRepository;
 
-    public CustomUserDetailsService(UserRepository userRepository) {
+    public CustomUserDetailsService(UserRepo userRepository) {
         this.userRepository = userRepository;
     }
 

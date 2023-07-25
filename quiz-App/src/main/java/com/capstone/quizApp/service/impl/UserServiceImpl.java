@@ -3,8 +3,8 @@ package com.capstone.quizApp.service.impl;
 import com.capstone.quizApp.dto.UserDto;
 import com.capstone.quizApp.entity.Role;
 import com.capstone.quizApp.entity.User;
-import com.capstone.quizApp.repository.RoleRepository;
-import com.capstone.quizApp.repository.UserRepository;
+import com.capstone.quizApp.repository.RoleRepo;
+import com.capstone.quizApp.repository.UserRepo;
 import com.capstone.quizApp.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,12 +16,12 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository;
-    private RoleRepository roleRepository;
+    private UserRepo userRepository;
+    private RoleRepo roleRepository;
     private PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
+    public UserServiceImpl(UserRepo userRepository,
+                           RoleRepo roleRepository,
                            PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
