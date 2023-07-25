@@ -1,23 +1,19 @@
-//Get the button
-let mybutton = document.getElementById("myBtn");
+    // JavaScript function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
+    // Show the button when the user scrolls down 20px from the top of the document
+    window.onscroll = function() {
+      scrollFunction();
+    };
 
-function Function() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+    function scrollFunction() {
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    }
+    document.getElementById("scrollToTopBtn").addEventListener("click", scrollToTop);

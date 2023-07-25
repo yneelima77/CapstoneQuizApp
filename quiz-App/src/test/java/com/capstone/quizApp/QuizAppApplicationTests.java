@@ -72,7 +72,6 @@ class QuizAppApplicationTests {
 
     }
 
-    //test the findByEmail() userRepo method
     @Test
     public void testFindByEmail() {
         //list of users
