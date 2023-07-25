@@ -8,8 +8,6 @@ import com.capstone.quizApp.service.QuizService;
 import com.capstone.quizApp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,9 +16,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.security.Principal;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 @Controller
 public class QuizController {
 
@@ -68,11 +66,6 @@ public class QuizController {
         m.addAttribute("quizQuestions", quizQuestions);
 
         return "quiz";
-       /* submitted = false;
-        result.setUsername(userDetails.getUsername());
-        QuizQuestions quizQuestions = quizService.getQuestions();
-        m.addAttribute("quizQuestions", quizQuestions);
-        return "quiz";*/
     }
 
     // handler method to handle user registration request
@@ -108,7 +101,7 @@ public class QuizController {
     }
 
     @PostMapping("/submit")
-    public String submit(@ModelAttribute QuizQuestions quizQuestions, Model model) throws Exception {
+    public String submit(@ModelAttribute QuizQuestions quizQuestions, Model model){
         if(!submitted) {
             result.setCorrectAns(quizService.getResult(quizQuestions));
             quizService.saveResult(result);
@@ -116,9 +109,10 @@ public class QuizController {
         }
         System.out.println(quizQuestions);
 
-        return "redirect:/result";
-    }
+        model.addAttribute("result", result);
 
+        return "result";
+    }
 
 
     @GetMapping("/score")

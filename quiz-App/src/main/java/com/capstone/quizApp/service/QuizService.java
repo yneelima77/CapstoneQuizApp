@@ -47,7 +47,7 @@ public class QuizService {
         return quizQuestions;
     }
 
-    public int getResult(QuizQuestions quizQuestions) throws Exception {
+    public int getResult(QuizQuestions quizQuestions){
         int correct = 0;
 
         /*Getting null in ques*/
