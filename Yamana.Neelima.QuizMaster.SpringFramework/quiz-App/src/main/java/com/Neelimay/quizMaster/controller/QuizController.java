@@ -21,10 +21,7 @@ import java.util.List;
 @SuppressWarnings("ALL")
 @Controller
 public class QuizController {
-
-
     private UserService userService;
-
     @Autowired
     Result result;
     @Autowired
@@ -49,23 +46,6 @@ public class QuizController {
     @GetMapping("/login")
     public String loginForm() {
         return "login";
-    }
-
-
-
-    @PostMapping("/quiz")
-    public String quiz(@RequestParam String username, Model m) {
-        if(username.equals("")) {
-            return "redirect:/";
-        }
-
-        submitted = false;
-        result.setUsername(username);
-
-        QuizQuestions quizQuestions = quizService.getQuestions();
-        m.addAttribute("quizQuestions", quizQuestions);
-
-        return "quiz";
     }
 
     // handler method to handle user registration request
@@ -100,6 +80,20 @@ public class QuizController {
         return "users";
     }
 
+    @PostMapping("/quiz")
+    public String quiz(@RequestParam String username, Model m) {
+        if(username.equals("")) {
+            return "redirect:/";
+        }
+
+        submitted = false;
+        result.setUsername(username);
+
+        QuizQuestions quizQuestions = quizService.getQuestions();
+        m.addAttribute("quizQuestions", quizQuestions);
+
+        return "quiz";
+    }
     @PostMapping("/submit")
     public String submit(@ModelAttribute QuizQuestions quizQuestions, Model model){
         if(!submitted) {

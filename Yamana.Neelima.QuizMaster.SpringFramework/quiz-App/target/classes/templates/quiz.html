@@ -33,6 +33,7 @@
         </div>
     </div>
 </nav>
+<script type="text/javascript" th:src="@{/scrollupbtn.js}"></script>
 <div class="container py-5 px-4">
     <h3 style="text-align: center; text-color: black;">Java Fullstack Quiz</h3>
     <form action="/submit" method="POST" th:object=${quizQuestions}>
@@ -71,7 +72,7 @@
 
 <div th:insert="footer.html :: footer"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
+<!--<script>
     // JavaScript function to scroll to the top of the page
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -91,6 +92,6 @@
       }
     }
     document.getElementById("scrollToTopBtn").addEventListener("click", scrollToTop);
-</script>
+</script>-->
 </body>
 </html>

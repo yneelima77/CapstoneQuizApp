@@ -33,6 +33,7 @@
         </div>
     </div>
 </nav>
+<script type="text/javascript" th:src="@{/scrollupbtn.js}"></script>
 <div class="container p-5 my-4 rounded-3">
     <h3>Let's Test Knowledge in Java FullStack Development</h3>
     <p class="lead">A Java Fullstack Development Quiz App can be a great tool for developers to test and enhance their
@@ -124,8 +125,8 @@
 </div>
 <div th:insert="footer.html :: footer"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-<!--<script type="text/javascript" th:src="@{/scrollupbtn.js}"></script>-->
-<script>
+
+<!--<script>
     // JavaScript function to scroll to the top of the page
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -146,6 +147,6 @@
     }
     document.getElementById("scrollToTopBtn").addEventListener("click", scrollToTop);
 
-</script>
+</script>-->
 </body>
 </html>
